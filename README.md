@@ -1,7 +1,7 @@
 # SMS-Spam-Classifier
 > By Aayush Jain (Darkshadow)
 
-* The SMS Spam Dataset from Kaggel is used to in the project to classify whether a SMS received is a spam or not(here HAM).
+* The SMS Spam Dataset from Kaggle is used to in the project to classify whether a SMS received is a spam or not(here HAM).
 * The Multinomial Classifier is used in this.
 
 ## Steps:
