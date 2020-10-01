@@ -1,3 +1,4 @@
+## Importing libraries
 import pandas as pd
 import re
 import nltk
@@ -9,8 +10,10 @@ from sklearn.model_selection import train_test_split
 from sklearn.naive_bayes import MultinomialNB
 from sklearn.metrics import confusion_matrix,accuracy_score
 
+## Importing dataset
 messages=pd.read_csv('SMSSpamCollection',sep='\t',names=['label','message'])
 
+## Data Preprocessing
 #ps=PorterStemmer()
 lm=WordNetLemmatizer()
 corpus=[]
@@ -29,8 +32,10 @@ x=cv.fit_transform(corpus).toarray()
 y=pd.get_dummies(messages['label'])
 y=y.iloc[:,1].values
 
+## Train-Test Split
 X_train,X_test,y_train,y_test=train_test_split(x,y,test_size=0.20,random_state=0)
 
+## Model fitting 
 spam_detect_model=MultinomialNB().fit(X_train,y_train)
 
 y_pred=spam_detect_model.predict(X_test)
